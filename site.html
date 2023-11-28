@@ -1,0 +1,81 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Agrómon</title>
+
+  </head>
+  <body>
+
+  <div class="choice">
+    <div class="names">
+      <div></div>
+      <div class="textGrass">Oddish</div>
+      <div class="textFire">Magmar</div>
+      <div class="textWater">Kingler</div>
+      <div></div>
+    </div>
+    <div></div> 
+    <div class="bg" id = 'bgGrass'></div>
+    <div class="bg" id = 'bgFire'></div>
+    <div class="bg" id = 'bgWater'></div>
+    <div class="grass"><img src="img/oddishCard.png" class="cardImg" id="imgGrass"><div class = 'cardBorder' id="bord1"></div></div>
+    <div class="fire"><img src="img/magmarCard.png" class="cardImg" id="imgFire"><div class = 'cardBorder' id="bord2"></div></div>
+    <div class="water"><img src="img/kinglerCard.png" class="cardImg" id="imgWater"><div class = 'cardBorder' id="bord3"></div></div>
+    <div></div>
+  </div>
+
+    <h2 class="text" id="text">Em uma pequena vila, um novo fazendeiro chega para iniciar sua jornada como um cultivador Agromon...</h2>
+    <div class="black-screen" id="black-screen"></div>
+
+
+    
+    <div class="battle_transition"></div>
+    <div class="battle_bg">
+      <div class="battle_bg2"></div>
+    </div>
+
+    <h3 class="batalhaEscolha">Escolha um Agromon para a batalha!</h3>
+    <div class="carta1"></div>
+    <div class="carta2"></div>
+    <div class="carta3"></div>
+    <div class="cartaInimiga1"></div>
+    <div class="cartaInimiga2"></div>
+    <div class="cartaInimiga3"></div>
+    <div class="attack">attack</div>
+    <div class="trade">trocar</div>
+    <div class="nome">Undefined</div>
+    <div class="atk">ATK</div>
+    <div class="atkNum">10</div>
+    <div class="atkType">FIRE</div>
+    <div class="def">HP</div>
+    <div class="defNum">20</div>
+    <div class="defType">FIRE</div>
+    <div class="nomeInimigo">Undefined</div>
+    <div class="atkInimigo">ATK</div>
+    <div class="atkNumInimigo">10</div>
+    <div class="atkTypeInimigo">FIRE</div>
+    <div class="defInimigo">HP</div>
+    <div class="defNumInimigo">20</div>
+    <div class="defTypeInimigo">FIRE</div>
+    <div class="atkInfo">ATK</div>
+    <div class="atkNumInfo">10</div>
+    <div class="atkTypeInfo">FIRE</div>
+    <div class="defInfo">HP</div>
+    <div class="defNumInfo">20</div>
+    <div class="defTypeInfo">FIRE</div>
+    <div class='vitoriaMsg'>VITORIA!!!</div>
+    <div class='derrotaMsg'>DERROTA :/</div>
+    <div class='empateMsg'>EMPATE</div>
+    <div class='telaVitoria'></div>
+
+    <canvas id="c"></canvas>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="data.js"></script>
+  <script src="data/collisions.js"></script>
+  <script src="classes.js"></script>
+  <script src="index.js"></script>
+  <script src="batalha1.js"></script>
+  <script src="Escolha.js"></script>
+

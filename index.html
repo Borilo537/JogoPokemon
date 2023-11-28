@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Agromón</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		</noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Agrómon</h1>
+						<p>Fire Red </p>
+						<nav>
+							<ul>
+								<li><a href="#" class="botao-play" id="playButton">PLAY</a></li>
+								<script>
+									document.getElementById('playButton').addEventListener('click', function() {
+    								window.location.href = 'site.html';
+									});
+								</script>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Agrómon. Design: Cadore, Murilo, Guilherme K, Rocha, Nunes</a>.</span>
+					</footer>
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>

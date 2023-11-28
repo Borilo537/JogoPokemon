@@ -1,0 +1,678 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  user-select: none;
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  justify-content: center;
+}
+
+canvas {
+  position: absolute;
+  transition: 1s;
+}
+
+.black-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 5s linear;
+}
+
+@font-face {
+  font-family: 'pixel';
+  src: url('pixelsix00.ttf');
+}
+
+.text {
+  opacity: 1;
+  margin-top: 30vh;
+  text-align: center;
+  width: 50vw;
+  font-size: 6vh;
+  font-family: pixel;
+  z-index: 3;
+  position: absolute;
+  display: flex;
+  color: white;
+  transition: opacity 2s;
+  transition: 5s;
+}
+
+.choice {
+  display: flex;
+  justify-content: space-around;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  opacity: 0;
+  transition: 1s;
+}
+
+.names {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  margin-top: 24vh;
+  opacity: 1;
+  transition: 1s;
+  font-size: 4.2vi;
+  color: white;
+  font-family: pixel;
+  margin-left: 1.16%;
+  transition-delay: 0.12;
+}
+
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: none;
+  opacity: 0;
+  transition: 1s;
+  background-color: rgb(0, 0, 0, 0.4);
+  z-index: 1;
+
+}
+
+
+.cardBorder {
+  width: 18vw;
+  height: 26vi;
+  background-color: rgb(12, 13, 75);
+  z-index: 2;
+  position: absolute;
+  margin-top: -1vh;
+  margin-left: -0.5vw;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.grass {
+  display: flex;
+  background-color: rgb(18, 18, 49);
+  width: 17vw;
+  height: 25vi;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.grass:hover {
+  transform: scale(1.13);
+}
+
+.fire {
+  display: flex;
+  background-color: rgb(18, 18, 49);
+  width: 17vw;
+  height: 25vi;
+  z-index: 9;
+  transition: 0.5s;
+}
+
+.fire:hover {
+  transform: scale(1.13);
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.water {
+  display: flex;
+  background-color: rgb(18, 18, 49);
+  width: 17vw;
+  height: 25vi;
+  z-index: 9;
+  transition: 0.5s;
+}
+
+.water:hover {
+  transform: scale(1.13);
+}
+
+
+.water {
+  background-color: rgb(18, 18, 49);
+  width: 17vw;
+  height: 25vi;
+  z-index: 9;
+}
+
+
+
+.battle_transition {
+  z-index: 2;
+  position: absolute;
+  transition: 1s;
+  background-color: rgb(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.battle_bg {
+  justify-content: center;
+  align-items: center;
+  transition: 0s;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(40, 26, 53);
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.battle_bg2 {
+  transition: 0s;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(83, 63, 102, 0.836);
+  width: 93vw;
+  height: 93vh;
+  opacity: 0;
+}
+
+.carta1 {
+  display: flex;
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: -62vw;
+  transition: 0.5s;
+  z-index: 1;
+  background-color: none;
+  width: 20vw;
+  height: 58vh;
+  opacity: 0;
+  background-image: url("img/kinglerCard.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.carta2 {
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: -1vw;
+  transition: 0.5s;
+  z-index: 1;
+  background-color: none;
+  width: 20vw;
+  height: 58vh;
+  opacity: 0;
+  background-image: url("img/eeveeCard.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+
+.carta3 {
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 60vw;
+  transition: 0.5s;
+  z-index: 1;
+  background-color: none;
+  width: 20vw;
+  height: 58vh;
+  opacity: 0;
+  background-image: url("img/yanmegaCard.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+
+.carta1:hover {
+  transform: scale(1.1);
+}
+
+.carta2:hover {
+  transform: scale(1.1);
+}
+
+.carta3:hover {
+  transform: scale(1.1);
+}
+
+
+.batalhaEscolha {
+  transition: 0.5s;
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: -1vw;
+  font-family: pixel;
+  font-size: 4vw;
+  color: rgb(255, 255, 255);
+  z-index: 40;
+  opacity: 0;
+}
+
+.cartaInimiga1 {
+  position: absolute;
+  margin-top: -46vh;
+  margin-left: -52vw;
+  transition: 0.5s;
+  z-index: 2;
+  background-color: rgb(0, 68, 255);
+  width: 20vw;
+  height: 60vh;
+  opacity: 0;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0.4vw solid rgb(0, 0, 0);
+}
+
+.cartaInimiga2 {
+  position: absolute;
+  margin-top: -46vh;
+  margin-left: -1vw;
+  transition: 0.5s;
+  z-index: 3;
+  background-color: rgb(0, 54, 155);
+  width: 20vw;
+  height: 60vh;
+  opacity: 0;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0.4vw solid rgb(0, 0, 0);
+
+}
+
+.cartaInimiga3 {
+  position: absolute;
+  margin-top: -46vh;
+  margin-left: 50vw;
+  transition: 0.5s;
+  z-index: 4;
+  background-color: rgb(0, 18, 99);
+  width: 20vw;
+  height: 60vh;
+  opacity: 0;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0.4vw solid rgb(0, 0, 0);
+}
+
+.attack {
+  text-align: center;
+  font-size: 3vw;
+  font-family: pixel;
+  color: rgb(212, 69, 93);
+  line-height: 26vh;
+  border: 0.5vw solid rgb(51, 14, 20);
+  transition: 0.5s;
+  position: absolute;
+  width: 12vw;
+  height: 26vh;
+  background-color: rgb(98, 25, 37);
+  z-index: 1;
+  margin-left: -30vw;
+  margin-top: 40vh;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.trade {
+  text-align: center;
+  font-size: 3vw;
+  font-family: pixel;
+  color: rgb(100, 66, 184);
+  line-height: 26vh;
+  border: 0.5vw solid rgb(25, 15, 49);
+  transition: 0.5s;
+  position: absolute;
+  width: 12vw;
+  height: 26vh;
+  background-color: rgb(47, 28, 96);
+  z-index: 1;
+  margin-left: -70vw;
+  margin-top: 40vh;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.attack:hover {
+  transform: scale(1.1);
+}
+
+.trade:hover {
+  transform: scale(1.1);
+}
+
+.nome {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 52.5vh;
+  margin-right: -60vw;
+}
+
+.atk {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 73vh;
+  margin-right: -40vw;
+}
+
+.atkNum {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 72vh;
+  margin-right: -56vw;
+}
+
+.atkType {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 73vh;
+  margin-right: -80vw;
+}
+
+.def {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 85vh;
+  margin-right: -40vw;
+}
+
+.defNum {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 84vh;
+  margin-right: -56vw;
+}
+
+.defType {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 85vh;
+  margin-right: -80vw;
+}
+
+
+.nomeInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 5.5vh;
+  margin-right: -60vw;
+}
+
+.atkInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 27vh;
+  margin-right: -40vw;
+}
+
+.atkNumInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 26vh;
+  margin-right: -56vw;
+}
+
+.atkTypeInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 27vh;
+  margin-right: -80vw;
+}
+
+.defInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 39vh;
+  margin-right: -40vw;
+}
+
+.defNumInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 38vh;
+  margin-right: -56vw;
+}
+
+.defTypeInimigo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 4vw;
+  z-index: 3;
+  font-family: pixel;
+  margin-top: 39vh;
+  margin-right: -80vw;
+}
+
+.atkInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 43vh;
+  margin-right: 42vw;
+}
+
+.atkNumInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3.3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 42.3vh;
+  margin-right: 30vw;
+}
+
+.atkTypeInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 43vh;
+  margin-right: 12vw;
+}
+
+.defInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 55vh;
+  margin-right: 42vw;
+}
+
+.defNumInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3.3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 54.3vh;
+  margin-right: 30vw;
+}
+
+.defTypeInfo {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  z-index: 1;
+  font-family: pixel;
+  margin-top: 55vh;
+  margin-right: 12vw;
+}
+
+.vitoriaMsg{
+  opacity: 0;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 6vw;
+  font-family: pixel;
+  justify-content: center;
+  transition: 1s;
+  z-index: 1;
+  margin-top: 33vh;
+  width: 30vw;
+  height: 30vh;
+  background-color: rgba(70, 192, 0, 0.8);
+  border: 1vw solid rgb(0, 148, 7)
+}
+
+.derrotaMsg{
+  opacity: 0;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 6vw;
+  font-family: pixel;
+  justify-content: center;
+  transition: 1s;
+  z-index: 1;
+  margin-top: 33vh;
+  width: 35vw;
+  height: 30vh;
+  background-color: rgb(255, 115, 0, 0.8);
+  border: 1vw solid rgb(255, 60, 0);
+}
+
+.empateMsg{
+  opacity: 0;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 6vw;
+  font-family: pixel;
+  justify-content: center;
+  transition: 1s;
+  z-index: 1;
+  margin-top: 33vh;
+  width: 30vw;
+  height: 30vh;
+  background-color: rgb(255, 115, 0, 0.8);
+  border: 1vw solid rgb(255, 60, 0);
+  filter: saturate(0);
+}
+
+.telaVitoria{
+  opacity: 0;
+  margin-top: 9vh;
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  z-index: 1;
+  background-image: url('winScreen.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0.4vw solid rgb(0, 0, 0);
+}
